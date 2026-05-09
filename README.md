@@ -48,3 +48,17 @@ Backend API: [API Server](https://privguard-backend-7r5j.onrender.com)
 ## Team
 
 Built for Hackathon 2026 by Team PrivGuard
+
+## Screenshots
+
+### Home Page
+![Home](./home.png)
+
+### Scan Page
+![Scan](./scan.png)
+
+### Security Report
+![Report](./report.png)
+
+### Additional Report View
+![Report Extra](./report(1).png)
