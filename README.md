@@ -1,16 +1,50 @@
-# React + Vite
+# PrivGuard 🛡️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PrivGuard is a cybersecurity platform that helps users detect whether their email or phone number has been exposed in public data breaches.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Email breach detection
+- Phone breach detection
+- Real-time security scanning
+- Risk score analysis
+- Exposure report generation
+- Loading spinner + progress bar
+- Smart breach source display (+more)
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
+- React.js
+- Vite
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+### Backend
+- Node.js
+- Express.js
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Demo
+
+Frontend: [Live Website](https://privguard-frontend-d30u.onrender.com)
+
+Backend API: [API Server](https://privguard-backend-7r5j.onrender.com)
+
+## How It Works
+
+1. User enters email or phone number
+2. Frontend sends request to backend API
+3. Backend scans breach intelligence data
+4. Security risk is analyzed
+5. User receives a detailed security report
+
+## Future Scope
+
+- Dark web monitoring
+- Password strength checker
+- Threat prediction
+- OTP verification
+
+## Team
+
+Built for Hackathon 2026 by Team PrivGuard
