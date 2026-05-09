@@ -8,7 +8,19 @@ function Scan() {
   const [phone, setPhone] = useState("");
 
   const startScan = async () => {
-  if (!email) return alert("Enter email first");
+  if (!email) {
+    return alert("Please enter your email");
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    return alert("Please enter a valid email");
+  }
+
+  if (phone && phone.length < 10) {
+    return alert("Phone number must be at least 10 digits");
+  }
 
   try {
     setLoading(true);
@@ -60,21 +72,72 @@ function Scan() {
         <button onClick={startScan} style={{ marginTop: "20px", width: "100%", padding: "14px", borderRadius: "10px", border: "none", background: "linear-gradient(to right,#06b6d4,#8b5cf6)", color: "white", cursor: "pointer", fontWeight: "bold" }}>Start Scan</button>
       </div>
       {loading && (
-        <div style={{ marginTop: "50px" }}>
-          <h3 style={{ color: "#22c55e" }}>
-            🛡 Running Security Intelligence Scan...
-          </h3>
-          <pre style={{ color: "#22c55e", fontFamily: "monospace" }}>
+  <div style={{ marginTop: "40px", width: "100%", maxWidth: "500px" }}>
+    
+    <div
+      style={{
+        width: "50px",
+        height: "50px",
+        border: "5px solid #334155",
+        borderTop: "5px solid #06b6d4",
+        borderRadius: "50%",
+        animation: "spin 1s linear infinite",
+        margin: "0 auto",
+      }}
+    ></div>
+
+    <h3
+      style={{
+        color: "#22c55e",
+        textAlign: "center",
+        marginTop: "20px",
+      }}
+    >
+      🛡 Running Security Intelligence Scan...
+    </h3>
+
+    <div
+      style={{
+        marginTop: "20px",
+        background: "#1e293b",
+        borderRadius: "10px",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: "12px",
+          background: "linear-gradient(to right,#06b6d4,#8b5cf6)",
+        }}
+      ></div>
+    </div>
+
+    <pre
+      style={{
+        color: "#22c55e",
+        fontFamily: "monospace",
+        marginTop: "20px",
+      }}
+    >
 {`
 [+] Connecting to threat intelligence...
-[+] Searching global breach databases...
+[+] Searching breach databases...
 [+] Checking leaked credentials...
-[+] Analyzing sensitive information...
 [+] Generating security report...
 `}
-          </pre>
-        </div>
-      )}
+    </pre>
+
+    <style>
+      {`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}
+    </style>
+  </div>
+)}
     </div>
   );
 }

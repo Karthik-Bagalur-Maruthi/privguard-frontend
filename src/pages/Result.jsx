@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Result() {
   const navigate = useNavigate();
+  const [showEmailSources, setShowEmailSources] = useState(false);
+  const [showPhoneSources, setShowPhoneSources] = useState(false);
   const location = useLocation();
 
   const data = location.state;
@@ -113,9 +116,30 @@ function Result() {
 
         <p>
           Sources:{" "}
-          {data?.emailExposure?.sources
-          ?.map(source => source.name)
-          .join(", ") || "None"}
+          {(showEmailSources
+            ? data?.emailExposure?.sources
+            : data?.emailExposure?.sources?.slice(0, 5)
+          )
+            ?.map(source => source.name)
+            .join(", ") || "None"}
+
+          {data?.emailExposure?.sources?.length > 5 && (
+            <span
+              onClick={() =>
+                setShowEmailSources(!showEmailSources)
+              }
+              style={{
+                color: "#38bdf8",
+                cursor: "pointer",
+                marginLeft: "8px",
+                fontWeight: "bold",
+              }}
+            >
+              {showEmailSources
+                ? " Show Less"
+                : ` +${data.emailExposure.sources.length - 5} more`}
+            </span>
+          )}
         </p>
         <hr />
 
@@ -181,11 +205,31 @@ function Result() {
 
         <p>
           Sources:{" "}
-          {data?.phoneExposure?.sources
-          ?.map(source => source.name)
-          .join(", ") || "None"}
-        </p>
+          {(showPhoneSources
+            ? data?.phoneExposure?.sources
+            : data?.phoneExposure?.sources?.slice(0, 5)
+          )
+            ?.map(source => source.name)
+            .join(", ") || "None"}
 
+          {data?.phoneExposure?.sources?.length > 5 && (
+            <span
+              onClick={() =>
+                setShowPhoneSources(!showPhoneSources)
+              }
+              style={{
+                color: "#38bdf8",
+                cursor: "pointer",
+                marginLeft: "8px",
+                fontWeight: "bold",
+              }}
+            >
+              {showPhoneSources
+                ? " Show Less"
+                : ` +${data.phoneExposure.sources.length - 5} more`}
+            </span>
+          )}
+        </p>
 
         <hr />
 
