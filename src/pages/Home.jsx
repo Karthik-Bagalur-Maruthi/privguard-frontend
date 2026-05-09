@@ -63,18 +63,18 @@ function Home() {
       <div style={styles.cards}>
         
         <div style={styles.card}>
-          <h3>⚡ AI Detection</h3>
-          <p>Real-time email breach detection using AI models.</p>
+          <h3>⚡ Smart Detection</h3>
+          <p>Real-time breach detection using security intelligence.</p>
         </div>
 
         <div style={styles.card}>
-          <h3>🔐 Secure System</h3>
-          <p>End-to-end encrypted scanning architecture.</p>
+          <h3>🔐 Privacy Protection</h3>
+          <p>End-to-end secure scanning architecture.</p>
         </div>
 
         <div style={styles.card}>
-          <h3>📩 Email Insights</h3>
-          <p>Get detailed reports of leaked credentials.</p>
+          <h3>📊 Breach Analytics</h3>
+          <p>Get detailed exposure and security reports.</p>
         </div>
 
       </div>
