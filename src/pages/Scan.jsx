@@ -14,7 +14,7 @@ function Scan() {
     setLoading(true);
 
     const response = await fetch(
-      "http://localhost:5000/api/exposure/scan",
+      "https://privguard-backend-7r5j.onrender.com/api/exposure/scan",
       {
         method: "POST",
         headers: {
