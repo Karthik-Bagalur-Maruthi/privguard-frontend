@@ -45,9 +45,7 @@ Backend API: [API Server](https://privguard-backend-7r5j.onrender.com)
 - Threat prediction
 - OTP verification
 
-## Team
 
-Built for Hackathon 2026 by Team PrivGuard
 
 ## Screenshots
 
